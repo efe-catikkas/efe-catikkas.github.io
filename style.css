@@ -1952,3 +1952,81 @@ img {
     height: 220px;
   }
 }
+
+
+/* Bank Marketing full hover preview */
+
+.project-image-preview {
+  position: relative;
+  cursor: zoom-in;
+}
+
+.project-image-preview > img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.28s ease;
+}
+
+.project-card:hover .project-image-preview > img {
+  transform: scale(1.025);
+}
+
+.project-image-preview::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1998;
+  background: rgba(3, 15, 30, 0.64);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.project-hover-preview {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1999;
+  width: min(90vw, 1320px);
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 14px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.94);
+  transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
+}
+
+.project-hover-preview img {
+  width: 100%;
+  max-height: 84vh;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.project-image-preview:hover::after,
+.project-image-preview:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-image-preview:hover .project-hover-preview,
+.project-image-preview:focus-visible .project-hover-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (hover: none), (max-width: 720px) {
+  .project-image-preview::after,
+  .project-hover-preview {
+    display: none;
+  }
+}

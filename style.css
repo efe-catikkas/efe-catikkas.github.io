@@ -1538,3 +1538,149 @@ img {
   }
 
 }/* Efe Çatıkkaş Portfolio Styles */
+
+
+/* Certificate thumbnail + hover preview */
+
+.cert-card-with-preview {
+  grid-template-columns: 104px 1fr;
+}
+
+.certificate-thumb {
+  position: relative;
+
+  width: 104px;
+  aspect-ratio: 1.414 / 1;
+
+  display: block;
+  align-self: start;
+
+  overflow: visible;
+
+  border: 1px solid var(--border-dark);
+  border-radius: 9px;
+
+  background: white;
+
+  box-shadow:
+    0 7px 18px rgba(7, 26, 51, 0.10);
+
+  cursor: zoom-in;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.certificate-thumb > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+.certificate-thumb:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(7, 26, 51, 0.15);
+}
+
+.certificate-thumb::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 1998;
+
+  background: rgba(3, 15, 30, 0.64);
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease;
+}
+
+.certificate-preview {
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 1999;
+
+  width: min(86vw, 1100px);
+
+  padding: 10px;
+
+  background: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 14px;
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.38);
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.94);
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+}
+
+.certificate-preview img {
+  width: 100%;
+  max-height: 82vh;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+}
+
+.certificate-thumb:hover::after,
+.certificate-thumb:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.certificate-thumb:hover .certificate-preview,
+.certificate-thumb:focus-visible .certificate-preview {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+}
+
+@media (hover: none), (max-width: 720px) {
+
+  .cert-card-with-preview {
+    grid-template-columns: 92px 1fr;
+  }
+
+  .certificate-thumb {
+    width: 92px;
+  }
+
+  .certificate-thumb::after,
+  .certificate-preview {
+    display: none;
+  }
+
+}

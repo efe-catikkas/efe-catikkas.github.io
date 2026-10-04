@@ -2058,3 +2058,106 @@ body.bank-preview-open .bank-marketing-card {
     cursor: pointer;
   }
 }
+
+
+
+/* =========================================================
+   LOGISTICS — VIEWPORT HOVER PREVIEW
+   Mirrors the working Bank Marketing implementation.
+========================================================= */
+
+.logistics-card .project-image-preview {
+  cursor: zoom-in;
+}
+
+.logistics-hover-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(3, 15, 30, 0.78);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease;
+}
+
+.logistics-hover-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 94vw;
+  max-height: 92vh;
+
+  padding: 10px;
+
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
+
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.48);
+
+  transform: scale(0.97);
+  transition: transform 0.18s ease;
+}
+
+.logistics-hover-frame img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: min(92vw, 1450px);
+  max-height: calc(92vh - 20px);
+
+  object-fit: contain;
+
+  border-radius: 8px;
+}
+
+body.logistics-preview-open .logistics-hover-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.logistics-preview-open .logistics-hover-frame {
+  transform: scale(1);
+}
+
+body.logistics-preview-open .logistics-card {
+  transform: none !important;
+}
+
+.logistics-card .project-image-preview > img {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.logistics-card .project-image-preview:hover > img {
+  transform: scale(1.01);
+  filter: brightness(0.97);
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 720px) {
+  .logistics-hover-overlay {
+    display: none;
+  }
+
+  .logistics-card .project-image-preview {
+    cursor: pointer;
+  }
+}

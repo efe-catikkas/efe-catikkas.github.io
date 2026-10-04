@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Bank Marketing Response Prioritization case study by Efe Çatıkkaş: chronological validation, capacity-based prioritization, segment profiling and Power BI."
+  >
+  <title>Bank Marketing Response Prioritization | Efe Çatıkkaş</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="case-study-page">
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">Efe Çatıkkaş</a>
+      <nav class="nav-menu">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#certifications">Certifications</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="case-hero">
+      <div class="container case-hero-inner">
+        <a href="../index.html#projects" class="case-back">← Back to Projects</a>
+
+        <p class="section-kicker">MACHINE LEARNING · POWER BI · CAMPAIGN ANALYTICS</p>
+
+        <h1>Bank Marketing Response Prioritization</h1>
+
+        <p class="case-lead">
+          A portfolio project built around a practical campaign decision:
+          when contact capacity is limited, which records should be prioritized first?
+          The workflow combines chronological validation, ranking-oriented model evaluation,
+          capacity scenarios, segment profiling and decision-focused Power BI reporting.
+        </p>
+
+        <div class="case-actions">
+          <a
+            href="https://github.com/efe-catikkas/bank-marketing-response-prioritization_v1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            View GitHub Repository
+          </a>
+          <a href="#dashboards" class="btn btn-secondary">
+            View Dashboards
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+
+        <div class="case-metrics">
+          <div class="case-metric">
+            <span>Selected Model</span>
+            <strong>Random Forest</strong>
+          </div>
+          <div class="case-metric">
+            <span>Test ROC-AUC</span>
+            <strong>0.660</strong>
+          </div>
+          <div class="case-metric">
+            <span>Top-20% Response Rate</span>
+            <strong>67.87%</strong>
+          </div>
+          <div class="case-metric">
+            <span>Lift@20</span>
+            <strong>1.53×</strong>
+          </div>
+          <div class="case-metric">
+            <span>Prioritized Records</span>
+            <strong>999</strong>
+          </div>
+          <div class="case-metric">
+            <span>Retrospective Difference</span>
+            <strong>≈ +233</strong>
+          </div>
+        </div>
+
+        <div class="case-two-column">
+
+          <article class="case-panel">
+            <p class="section-kicker">BUSINESS QUESTION</p>
+            <h2>Prioritize under limited contact capacity</h2>
+            <p>
+              Instead of treating the task as a simple binary classification problem,
+              the model score is used to rank records relative to other records within
+              the same campaign period.
+            </p>
+            <p>
+              The analysis asks whether a limited-capacity contact strategy can concentrate
+              more positive responses into the subset selected for outreach.
+            </p>
+          </article>
+
+          <article class="case-panel">
+            <p class="section-kicker">APPROACH</p>
+            <h2>Chronological and ranking-oriented</h2>
+            <ul class="case-list">
+              <li>Preserve chronological campaign-period blocks.</li>
+              <li>Remove known target leakage such as call duration.</li>
+              <li>Compare Logistic Regression and Random Forest.</li>
+              <li>Select the model using Lift@20 on validation.</li>
+              <li>Evaluate once on untouched test blocks.</li>
+              <li>Export decision-ready outputs to Power BI.</li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="case-section case-section-soft" id="dashboards">
+      <div class="container">
+
+        <div class="case-section-heading">
+          <p class="section-kicker">POWER BI</p>
+          <h2>Three-page decision dashboard</h2>
+          <p>
+            The reporting layer translates the modelling workflow into business-facing
+            views for prioritization, profile analysis and model interpretation.
+          </p>
+        </div>
+
+        <article class="dashboard-showcase">
+          <div class="dashboard-copy">
+            <span class="dashboard-number">01</span>
+            <div>
+              <h3>Campaign Decision</h3>
+              <p>
+                Capacity scenarios, response-rate comparison, Lift@20,
+                capture rate and the prioritized contact list.
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://raw.githubusercontent.com/efe-catikkas/bank-marketing-response-prioritization_v1/main/images/dashboard_01_campaign_decision.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dashboard-image-link"
+          >
+            <img
+              src="https://raw.githubusercontent.com/efe-catikkas/bank-marketing-response-prioritization_v1/main/images/dashboard_01_campaign_decision.png"
+              alt="Campaign Decision dashboard"
+              loading="lazy"
+            >
+          </a>
+        </article>
+
+        <article class="dashboard-showcase">
+          <div class="dashboard-copy">
+            <span class="dashboard-number">02</span>
+            <div>
+              <h3>Profile of Prioritized Records</h3>
+              <p>
+                Descriptive profiling of prioritized records across contact channel,
+                age group, occupation, previous contacts and education.
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://raw.githubusercontent.com/efe-catikkas/bank-marketing-response-prioritization_v1/main/images/dashboard_02_target_profile.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dashboard-image-link"
+          >
+            <img
+              src="https://raw.githubusercontent.com/efe-catikkas/bank-marketing-response-prioritization_v1/main/images/dashboard_02_target_profile.png"
+              alt="Profile of Prioritized Records dashboard"
+              loading="lazy"
+            >
+          </a>
+        </article>
+
+        <article class="dashboard-showcase">
+          <div class="dashboard-copy">
+            <span class="dashboard-number">03</span>
+            <div>
+              <h3>Model & Limitations</h3>
+              <p>
+                Model metrics, baseline comparison, test-set context and explicit
+                interpretation boundaries for responsible use of the results.
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://raw.githubusercontent.com/efe-catikkas/bank-marketing-response-prioritization_v1/main/images/dashboard_03_model_limitations.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dashboard-image-link"
+          >
+            <img
+              src="https://raw.githubusercontent.com/efe-catikkas/bank-marketing-response-prioritization_v1/main/images/dashboard_03_model_limitations.png"
+              alt="Model and Limitations dashboard"
+              loading="lazy"
+            >
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+
+        <div class="case-two-column">
+
+          <article class="case-panel">
+            <p class="section-kicker">TOOLS</p>
+            <h2>Technical stack</h2>
+            <div class="skill-tags case-tags">
+              <span>Python</span>
+              <span>pandas</span>
+              <span>scikit-learn</span>
+              <span>Random Forest</span>
+              <span>Power BI</span>
+              <span>Data Validation</span>
+            </div>
+          </article>
+
+          <article class="case-panel">
+            <p class="section-kicker">INTERPRETATION</p>
+            <h2>Important limitations</h2>
+            <p>
+              The project is retrospective. The model score is a relative prioritization
+              score rather than a calibrated purchase probability, and the reported
+              improvement is not a causal uplift or guaranteed campaign gain.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-kicker">NEXT</p>
+          <h2>Explore the full repository</h2>
+          <p>
+            Review the notebook, methodology, model policy and Power BI-ready outputs on GitHub.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a
+            href="https://github.com/efe-catikkas/bank-marketing-response-prioritization_v1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Open GitHub
+          </a>
+          <a href="../index.html#projects" class="btn btn-secondary">
+            Back to Portfolio
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Efe Çatıkkaş</p>
+      <p>Data & Business Analytics Portfolio</p>
+    </div>
+  </footer>
+
+</body>
+</html>

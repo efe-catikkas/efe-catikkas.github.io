@@ -1954,107 +1954,31 @@ img {
 }
 
 
-/* Bank Marketing full hover preview */
-
-.project-image-preview {
-  position: relative;
-  cursor: zoom-in;
-}
-
-.project-image-preview > img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  object-position: top center;
-  transition: transform 0.28s ease;
-}
-
-.project-card:hover .project-image-preview > img {
-  transform: scale(1.025);
-}
-
-.project-image-preview::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1998;
-  background: rgba(3, 15, 30, 0.64);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.22s ease, visibility 0.22s ease;
-}
-
-.project-hover-preview {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  z-index: 1999;
-  width: min(90vw, 1320px);
-  padding: 10px;
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 14px;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.94);
-  transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
-}
-
-.project-hover-preview img {
-  width: 100%;
-  max-height: 84vh;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.project-image-preview:hover::after,
-.project-image-preview:focus-visible::after {
-  opacity: 1;
-  visibility: visible;
-}
-
-.project-image-preview:hover .project-hover-preview,
-.project-image-preview:focus-visible .project-hover-preview {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-@media (hover: none), (max-width: 720px) {
-  .project-image-preview::after,
-  .project-hover-preview {
-    display: none;
-  }
-}
-
-
-/* Bank Marketing viewport hover preview v2 */
+/* =========================================================
+   BANK MARKETING — VIEWPORT HOVER PREVIEW
+   Uses a body class toggled by script.js.
+   This avoids fixed-position elements being trapped inside
+   the transformed project card.
+========================================================= */
 
 .bank-marketing-card .project-image-preview {
   cursor: zoom-in;
 }
 
-/* Keep the card itself stable while the large preview is open. */
-.bank-marketing-card:has(.project-image-preview:hover) {
-  transform: none;
-}
-
 .bank-marketing-hover-overlay {
   position: fixed;
   inset: 0;
-  z-index: 3000;
+  z-index: 10000;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 28px;
+  padding: 24px;
 
-  background: rgba(3, 15, 30, 0.72);
+  background: rgba(3, 15, 30, 0.78);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 
   opacity: 0;
   visibility: hidden;
@@ -2066,16 +1990,20 @@ img {
 }
 
 .bank-marketing-hover-frame {
-  width: min(94vw, 1450px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 94vw;
   max-height: 92vh;
 
   padding: 10px;
 
   background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
 
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.48);
 
   transform: scale(0.97);
   transition: transform 0.18s ease;
@@ -2083,27 +2011,50 @@ img {
 
 .bank-marketing-hover-frame img {
   display: block;
-  width: 100%;
+
+  width: auto;
+  height: auto;
+
+  max-width: min(92vw, 1450px);
   max-height: calc(92vh - 20px);
 
   object-fit: contain;
 
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-body:has(.bank-marketing-card .project-image-preview:hover)
-  .bank-marketing-hover-overlay {
+body.bank-preview-open .bank-marketing-hover-overlay {
   opacity: 1;
   visibility: visible;
 }
 
-body:has(.bank-marketing-card .project-image-preview:hover)
-  .bank-marketing-hover-frame {
+body.bank-preview-open .bank-marketing-hover-frame {
   transform: scale(1);
 }
 
-@media (hover: none), (max-width: 720px) {
+/* Prevent the normal project-card lift animation from interfering. */
+body.bank-preview-open .bank-marketing-card {
+  transform: none !important;
+}
+
+/* The small card image can still have a subtle hover cue. */
+.bank-marketing-card .project-image-preview > img {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.bank-marketing-card .project-image-preview:hover > img {
+  transform: scale(1.01);
+  filter: brightness(0.97);
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 720px) {
   .bank-marketing-hover-overlay {
     display: none;
+  }
+
+  .bank-marketing-card .project-image-preview {
+    cursor: pointer;
   }
 }

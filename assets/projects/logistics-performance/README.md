@@ -2,7 +2,7 @@
 
 Upload the two English dashboard images to this folder using these exact filenames:
 
-- logistics_dashboard_01.png
-- logistics_dashboard_02.png
+- logistics dashboard 01.png
+- logistics dashboard 02.png
 
-The portfolio homepage and the Logistics Performance case-study page are already configured to use these paths.
+The portfolio homepage and the Logistics Performance case-study page are already configured to use these filenames.

@@ -106,6 +106,78 @@
         width: 100%;
       }
     }
+
+    .executive-summary {
+      margin: 0 0 28px;
+    }
+
+    .executive-summary-heading {
+      margin-bottom: 16px;
+    }
+
+    .executive-summary-heading h2 {
+      color: var(--navy);
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+    }
+
+    .executive-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .summary-card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .summary-value {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--teal-dark);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .summary-card h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .summary-card p {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .portfolio-disclaimer {
+      margin: 0 0 28px;
+      padding: 16px 18px;
+      border: 1px solid rgba(7, 151, 166, 0.24);
+      border-radius: 12px;
+      background: rgba(7, 151, 166, 0.07);
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .portfolio-disclaimer strong {
+      color: var(--navy);
+    }
+
+    @media (max-width: 768px) {
+      .executive-summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -158,6 +230,64 @@
       </div>
 
 
+      <section class="executive-summary" aria-labelledby="executive-summary-title">
+
+        <div class="executive-summary-heading">
+          <p class="section-kicker">EXECUTIVE SUMMARY</p>
+          <h2 id="executive-summary-title">Key Management Insights</h2>
+        </div>
+
+        <div class="executive-summary-grid">
+
+          <article class="summary-card">
+            <span class="summary-value">40.1 kg/labor-hour</span>
+            <h3>Shift C is below the productivity average</h3>
+            <p>
+              Shift C performs below the 44.5 kg/labor-hour average,
+              while Shifts A and B remain above it.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <span class="summary-value">20.2 days</span>
+            <h3>Inventory requires close monitoring</h3>
+            <p>
+              Inventory days stand at 20.2, indicating a need to monitor
+              stock levels and turnover closely.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <span class="summary-value">101.6%</span>
+            <h3>Greece is above regional sales target</h3>
+            <p>
+              Greece is the only selected market above target, while the
+              remaining markets show gaps to plan.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <span class="summary-value">25.4 days</span>
+            <h3>Mersin shows the highest inventory risk</h3>
+            <p>
+              Mersin has the highest inventory days among the three sorting
+              locations and carries the largest inventory value.
+            </p>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <div class="portfolio-disclaimer" role="note">
+        <strong>Portfolio case study using synthetic data.</strong>
+        This dashboard was created for demonstration and analytics practice.
+        No real BTT Humana operational, sales, inventory or financial data was used,
+        and the results do not represent actual company performance.
+      </div>
+
+
       <div class="powerbi-shell">
 
         <div class="powerbi-wrapper">
@@ -175,9 +305,8 @@
 
 
       <p class="dashboard-note">
-        This portfolio project uses synthetic data created for demonstration
-        and analytics practice purposes. It does not represent actual company
-        operational or financial performance.
+        Explore the interactive report above to review the underlying KPI views,
+        filters and dashboard pages.
       </p>
 
       <div class="dashboard-actions">

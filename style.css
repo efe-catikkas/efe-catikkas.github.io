@@ -2279,3 +2279,26 @@ body.btt-gallery-open {
     display: none;
   }
 }
+
+
+/* Project dates */
+
+.project-date {
+  margin: -2px 0 14px;
+
+  color: var(--text-light);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.case-date {
+  margin: 4px 0 14px;
+
+  color: var(--text-light);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}

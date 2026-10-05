@@ -2075,3 +2075,207 @@ body.bank-preview-open .bank-marketing-card {
   transform: scale(1.01);
   filter: brightness(0.97);
 }
+
+
+
+/* =========================================================
+   BTT HUMANA — DASHBOARD GALLERY
+========================================================= */
+
+.btt-card .btt-project-preview {
+  cursor: zoom-in;
+}
+
+.btt-card .btt-project-preview > img {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.btt-card .btt-project-preview:hover > img {
+  transform: scale(1.01);
+  filter: brightness(0.97);
+}
+
+body.btt-gallery-open {
+  overflow: hidden;
+}
+
+.btt-gallery-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(3, 15, 30, 0.82);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.btt-gallery-frame {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(94vw, 1480px);
+  max-height: 92vh;
+
+  padding: 10px 10px 52px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, 0.50);
+}
+
+.btt-gallery-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: calc(92vh - 72px);
+
+  object-fit: contain;
+
+  border-radius: 9px;
+}
+
+.btt-gallery-close,
+.btt-gallery-nav,
+.btt-gallery-dot {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.btt-gallery-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  z-index: 3;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(7, 26, 51, 0.88);
+  color: #ffffff;
+
+  font-size: 28px;
+  line-height: 1;
+}
+
+.btt-gallery-nav {
+  position: absolute;
+  top: 50%;
+
+  z-index: 3;
+
+  width: 48px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border-radius: 12px;
+
+  background: rgba(7, 26, 51, 0.86);
+  color: #ffffff;
+
+  font-size: 38px;
+  line-height: 1;
+
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.btt-gallery-nav:hover {
+  background: rgba(7, 26, 51, 1);
+}
+
+.btt-gallery-prev {
+  left: 20px;
+}
+
+.btt-gallery-next {
+  right: 20px;
+}
+
+.btt-gallery-footer {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  transform: translateX(-50%);
+}
+
+.btt-gallery-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.btt-gallery-dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  background: #c7d2df;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.btt-gallery-dot.is-active {
+  background: var(--teal);
+  transform: scale(1.28);
+}
+
+.btt-gallery-counter {
+  min-width: 38px;
+
+  color: var(--text-soft);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 720px) {
+  .btt-card .btt-project-preview {
+    cursor: default;
+  }
+
+  .btt-gallery-overlay {
+    display: none;
+  }
+}

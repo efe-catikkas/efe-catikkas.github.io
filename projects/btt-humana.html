@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Interactive Power BI portfolio dashboard by Efe Çatıkkaş covering operations, sorting, sales, inventory, capacity and productivity analytics."
+  >
+
+  <title>BTT Humana | Operations & Sales Analytics Dashboard</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .dashboard-page {
+      padding: 118px 0 82px;
+      background: #ffffff;
+    }
+
+    .dashboard-header {
+      max-width: 920px;
+      margin-bottom: 32px;
+    }
+
+    .dashboard-header h1 {
+      color: var(--navy);
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .dashboard-header p:not(.section-kicker) {
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-bottom: 26px;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .powerbi-shell {
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .powerbi-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #f4f7fa;
+    }
+
+    .powerbi-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .dashboard-note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--background-soft);
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .dashboard-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-page {
+        padding-top: 92px;
+      }
+
+      .powerbi-wrapper {
+        aspect-ratio: 4 / 3;
+      }
+
+      .dashboard-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+
+      <a href="../index.html" class="logo">
+        Efe Çatıkkaş
+      </a>
+
+      <nav class="nav-menu">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#certifications">Certifications</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main class="dashboard-page">
+
+    <div class="container">
+
+      <a href="../index.html#projects" class="back-link">
+        ← Back to Projects
+      </a>
+
+      <div class="dashboard-header">
+
+        <p class="section-kicker">
+          POWER BI · OPERATIONS ANALYTICS
+        </p>
+
+        <h1>
+          Operations & Sales Analytics Dashboard
+        </h1>
+
+        <p>
+          Interactive Power BI dashboard covering sorting operations,
+          regional sales performance, inventory, capacity, productivity
+          and management KPIs.
+        </p>
+
+      </div>
+
+
+      <div class="powerbi-shell">
+
+        <div class="powerbi-wrapper">
+
+          <iframe
+            title="BTT Humana Operations and Sales Analytics Dashboard"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNmU1NGE4ZjUtNjZjNi00ZDVlLTkzODgtNTMyZGE5NWM4NDQzIiwidCI6ImI4YjE2ZmNiLTAyZGQtNDBlZi1hNDJkLWE4Y2EwYjI2MDgzYyJ9"
+            frameborder="0"
+            allowfullscreen="true">
+          </iframe>
+
+        </div>
+
+      </div>
+
+
+      <p class="dashboard-note">
+        This portfolio project uses synthetic data created for demonstration
+        and analytics practice purposes. It does not represent actual company
+        operational or financial performance.
+      </p>
+
+      <div class="dashboard-actions">
+        <a href="../index.html#projects" class="btn btn-secondary">
+          Back to Projects
+        </a>
+
+        <a
+          href="https://app.powerbi.com/view?r=eyJrIjoiNmU1NGE4ZjUtNjZjNi00ZDVlLTkzODgtNTMyZGE5NWM4NDQzIiwidCI6ImI4YjE2ZmNiLTAyZGQtNDBlZi1hNDJkLWE4Y2EwYjI2MDgzYyJ9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          Open Power BI Fullscreen
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>

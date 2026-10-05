@@ -1954,333 +1954,6 @@ img {
 }
 
 
-/* =========================================================
-   BANK MARKETING — VIEWPORT HOVER PREVIEW
-   Uses a body class toggled by script.js.
-   This avoids fixed-position elements being trapped inside
-   the transformed project card.
-========================================================= */
-
-.bank-marketing-card .project-image-preview {
-  cursor: zoom-in;
-}
-
-.bank-marketing-hover-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 24px;
-
-  background: rgba(3, 15, 30, 0.78);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transition:
-    opacity 0.18s ease,
-    visibility 0.18s ease;
-}
-
-.bank-marketing-hover-frame {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  max-width: 94vw;
-  max-height: 92vh;
-
-  padding: 10px;
-
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 14px;
-
-  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.48);
-
-  transform: scale(0.97);
-  transition: transform 0.18s ease;
-}
-
-.bank-marketing-hover-frame img {
-  display: block;
-
-  width: auto;
-  height: auto;
-
-  max-width: min(92vw, 1450px);
-  max-height: calc(92vh - 20px);
-
-  object-fit: contain;
-
-  border-radius: 8px;
-}
-
-body.bank-preview-open .bank-marketing-hover-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-body.bank-preview-open .bank-marketing-hover-frame {
-  transform: scale(1);
-}
-
-/* Prevent the normal project-card lift animation from interfering. */
-body.bank-preview-open .bank-marketing-card {
-  transform: none !important;
-}
-
-/* The small card image can still have a subtle hover cue. */
-.bank-marketing-card .project-image-preview > img {
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
-}
-
-.bank-marketing-card .project-image-preview:hover > img {
-  transform: scale(1.01);
-  filter: brightness(0.97);
-}
-
-@media (hover: none), (pointer: coarse), (max-width: 720px) {
-  .bank-marketing-hover-overlay {
-    display: none;
-  }
-
-  .bank-marketing-card .project-image-preview {
-    cursor: pointer;
-  }
-}
-
-
-/* Logistics card hover cue */
-.logistics-card .project-image-preview {
-  cursor: zoom-in;
-}
-
-.logistics-card .project-image-preview > img {
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
-}
-
-.logistics-card .project-image-preview:hover > img {
-  transform: scale(1.01);
-  filter: brightness(0.97);
-}
-
-
-
-/* =========================================================
-   BTT HUMANA — DASHBOARD GALLERY
-========================================================= */
-
-.btt-card .btt-project-preview {
-  cursor: zoom-in;
-}
-
-.btt-card .btt-project-preview > img {
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
-}
-
-.btt-card .btt-project-preview:hover > img {
-  transform: scale(1.01);
-  filter: brightness(0.97);
-}
-
-body.btt-gallery-open {
-  overflow: hidden;
-}
-
-.btt-gallery-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 12000;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 24px;
-
-  background: rgba(3, 15, 30, 0.82);
-
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-.btt-gallery-frame {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: min(94vw, 1480px);
-  max-height: 92vh;
-
-  padding: 10px 10px 52px;
-
-  background: #ffffff;
-
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 16px;
-
-  box-shadow:
-    0 32px 90px rgba(0, 0, 0, 0.50);
-}
-
-.btt-gallery-image {
-  display: block;
-
-  width: auto;
-  height: auto;
-
-  max-width: 100%;
-  max-height: calc(92vh - 72px);
-
-  object-fit: contain;
-
-  border-radius: 9px;
-}
-
-.btt-gallery-close,
-.btt-gallery-nav,
-.btt-gallery-dot {
-  font: inherit;
-  border: 0;
-  cursor: pointer;
-}
-
-.btt-gallery-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-
-  z-index: 3;
-
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: rgba(7, 26, 51, 0.88);
-  color: #ffffff;
-
-  font-size: 28px;
-  line-height: 1;
-}
-
-.btt-gallery-nav {
-  position: absolute;
-  top: 50%;
-
-  z-index: 3;
-
-  width: 48px;
-  height: 64px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transform: translateY(-50%);
-
-  border-radius: 12px;
-
-  background: rgba(7, 26, 51, 0.86);
-  color: #ffffff;
-
-  font-size: 38px;
-  line-height: 1;
-
-  transition:
-    background 0.18s ease,
-    transform 0.18s ease;
-}
-
-.btt-gallery-nav:hover {
-  background: rgba(7, 26, 51, 1);
-}
-
-.btt-gallery-prev {
-  left: 20px;
-}
-
-.btt-gallery-next {
-  right: 20px;
-}
-
-.btt-gallery-footer {
-  position: absolute;
-  left: 50%;
-  bottom: 14px;
-
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  transform: translateX(-50%);
-}
-
-.btt-gallery-dots {
-  display: flex;
-  gap: 8px;
-}
-
-.btt-gallery-dot {
-  width: 10px;
-  height: 10px;
-
-  padding: 0;
-
-  border-radius: 50%;
-
-  background: #c7d2df;
-
-  transition:
-    transform 0.18s ease,
-    background 0.18s ease;
-}
-
-.btt-gallery-dot.is-active {
-  background: var(--teal);
-  transform: scale(1.28);
-}
-
-.btt-gallery-counter {
-  min-width: 38px;
-
-  color: var(--text-soft);
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-@media (hover: none), (pointer: coarse), (max-width: 720px) {
-  .btt-card .btt-project-preview {
-    cursor: default;
-  }
-
-  .btt-gallery-overlay {
-    display: none;
-  }
-}
-
-
 /* Project dates */
 
 .project-date {
@@ -2301,4 +1974,382 @@ body.btt-gallery-open {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.03em;
+}
+
+
+
+/* =========================================================
+   UNIFIED PROJECT GALLERY
+========================================================= */
+
+.project-gallery-trigger {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.project-gallery-trigger::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 15, 30, 0.00);
+  transition: background 0.2s ease;
+  pointer-events: none;
+}
+
+.project-preview-hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+
+  min-width: max-content;
+  padding: 10px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+
+  background: rgba(7, 26, 51, 0.88);
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, -44%);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+
+  pointer-events: none;
+}
+
+.project-gallery-trigger:hover::after,
+.project-gallery-trigger:focus-visible::after {
+  background: rgba(3, 15, 30, 0.28);
+}
+
+.project-gallery-trigger:hover .project-preview-hint,
+.project-gallery-trigger:focus-visible .project-preview-hint {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+body.project-gallery-open {
+  overflow: hidden;
+}
+
+.project-gallery-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 15000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+
+  background: rgba(3, 15, 30, 0.84);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.project-gallery-frame {
+  width: min(96vw, 1500px);
+  max-height: 95vh;
+
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
+
+  box-shadow:
+    0 34px 100px rgba(0, 0, 0, 0.52);
+}
+
+.project-gallery-header {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 12px 16px 12px 20px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.project-gallery-header h2 {
+  color: var(--navy);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.project-gallery-close,
+.project-gallery-nav,
+.project-gallery-dot {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.project-gallery-close {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--navy);
+  color: #ffffff;
+
+  font-size: 26px;
+  line-height: 1;
+}
+
+.project-gallery-stage {
+  position: relative;
+
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  background: #f3f6f9;
+}
+
+.project-gallery-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: calc(95vh - 170px);
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 5px 22px rgba(7, 26, 51, 0.10);
+}
+
+.project-gallery-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+
+  width: 48px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border-radius: 12px;
+
+  background: rgba(7, 26, 51, 0.88);
+  color: #ffffff;
+
+  font-size: 38px;
+  line-height: 1;
+
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.project-gallery-nav:hover {
+  background: var(--navy);
+}
+
+.project-gallery-prev {
+  left: 20px;
+}
+
+.project-gallery-next {
+  right: 20px;
+}
+
+.project-gallery-footer {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 12px 18px;
+
+  border-top: 1px solid var(--border);
+
+  background: #ffffff;
+}
+
+.project-gallery-navigation {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.project-gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-gallery-dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  background: #c7d2df;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.project-gallery-dot.is-active {
+  background: var(--teal);
+  transform: scale(1.28);
+}
+
+.project-gallery-counter {
+  min-width: 36px;
+
+  color: var(--text-light);
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.project-gallery-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 9px;
+}
+
+.project-gallery-action {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 17px;
+
+  border: 1px solid var(--border-dark);
+  border-radius: 9px;
+
+  color: var(--navy);
+  background: #ffffff;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.project-gallery-action:hover {
+  transform: translateY(-1px);
+}
+
+.project-gallery-action.is-primary {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #ffffff;
+}
+
+@media (max-width: 720px) {
+  .project-preview-hint {
+    display: none;
+  }
+
+  .project-gallery-overlay {
+    padding: 8px;
+  }
+
+  .project-gallery-frame {
+    width: 100%;
+    max-height: 96vh;
+  }
+
+  .project-gallery-header h2 {
+    font-size: 15px;
+  }
+
+  .project-gallery-image {
+    max-height: calc(96vh - 220px);
+  }
+
+  .project-gallery-nav {
+    width: 40px;
+    height: 54px;
+  }
+
+  .project-gallery-prev {
+    left: 8px;
+  }
+
+  .project-gallery-next {
+    right: 8px;
+  }
+
+  .project-gallery-footer {
+    align-items: stretch;
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 10px 12px 12px;
+  }
+
+  .project-gallery-navigation {
+    justify-content: center;
+  }
+
+  .project-gallery-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+  .project-gallery-action {
+    width: 100%;
+  }
 }
